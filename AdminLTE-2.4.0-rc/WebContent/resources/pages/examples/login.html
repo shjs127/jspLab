@@ -42,15 +42,15 @@
 		<div class="login-box-body">
 			<p class="login-box-msg">Sign in to start your session</p>
 
-			<form action="../../index2.html" method="post">
+			<form action="../../index.html" method="post">
 				<div class="form-group has-feedback">
-					<input type="email" class="form-control" placeholder="Email"
-						id="email"> <span
+					<input type="email" class="form-control" id="email"
+						placeholder="Email"> <span
 						class="glyphicon glyphicon-envelope form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="password" class="form-control" placeholder="Password"
-						id=password> <span
+					<input type="password" class="form-control" id="password"
+						placeholder="Password"> <span
 						class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div class="row">
@@ -62,8 +62,8 @@
 					</div>
 					<!-- /.col -->
 					<div class="col-xs-4">
-						<button type="submit" class="btn btn-primary btn-block btn-flat"
-							id="btn1">Sign In</button>
+						<button type="submit" class="btn btn-primary btn-block btn-flat" id="btn1">Sign
+							In</button>
 					</div>
 					<!-- /.col -->
 				</div>
@@ -101,38 +101,36 @@
 			});
 		});
 	</script>
+
+
+
 	<script type="text/javascript">
 		//<![CDATA[
 		function login(id, pw) {
-			if (id == "hanguk@naver.com") { //방문자가 입력한 id가 "hanguk"과 일치할 경우
-
-				if (pw == "1234") { //방문자가 입력한 pw가 "1234"와 일치할 경우
-					alert(id + "님 방문을 환영합니다");
+			if (id == "hanguk@naver.com") {
+				if (pw == "1234") {
+					alert(id+"님 방문을 환영합니다.");
 					return true;
-				} else { //비밀번호가 일치하지 않을 경우
-					alert("잘못된 비밀번호입니다.")
+				} else {
+					alert("잘못된 비밀번호입니다.");
 				}
-
-			} else { //방문자가 입력한 id가 일치하지 않을 경우
-
-				alert("존재하지 않는 아이디입니다.")
-
+			} else {
+				alert("존재하지 않는 아이디입니다.");
 			}
 			return false;
 		}
 
-		/*질의응답 창을 이용해 방문자에게  아이디와 
-		 비밀번호를 입력받습니다.*/
 		document.getElementById("btn1").onclick = function() {
 			var user_id = document.getElementById("email").value;
 			var user_pw = document.getElementById("password").value;
 			var result = login(user_id, user_pw);
-			if (!result) {
+			if(!result) {
 				return false;
 			}
 		}
 
 		//]]>
 	</script>
+
 </body>
 </html>

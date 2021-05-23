@@ -207,23 +207,72 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="<%= request.getContextPath() %>/resources/bower_components/jquery/dist/jquery.min.js"></script>
-<%-- <script type="text/javascript" src="<%= request.getContextPath() %>/view/main/js/jquery-1.10.2.min.js"></script> --%>
+<%-- <script src="<%= request.getContextPath() %>/resources/<%=request.getContextPath()%>/resources/bower_components/jquery/<%=request.getContextPath()%>/resources/dist/jquery.min.js"></script> --%>
+<!-- <script type="text/javascript" src="../main/js/jquery-1.10.2.min.js"></script> -->
 
 <!-- Bootstrap 3.3.7 -->
-<script src="<%= request.getContextPath() %>/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="<%= request.getContextPath() %>/resources/<%=request.getContextPath()%>/resources/bower_components/bootstrap/<%=request.getContextPath()%>/resources/dist/js/bootstrap.min.js"></script>
 <!-- SlimScroll -->
-<script src="<%= request.getContextPath() %>/resources/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="<%= request.getContextPath() %>/resources/<%=request.getContextPath()%>/resources/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="<%= request.getContextPath() %>/resources/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="<%= request.getContextPath() %>/resources/<%=request.getContextPath()%>/resources/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="<%= request.getContextPath() %>/resources/dist/js/adminlte.min.js"></script>
+<script src="<%= request.getContextPath() %>/resources/<%=request.getContextPath()%>/resources/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<%= request.getContextPath() %>/resources/dist/js/demo.js"></script>
+<script src="<%= request.getContextPath() %>/resources/<%=request.getContextPath()%>/resources/dist/js/demo.js"></script>
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree()
   })
 </script>
+
+
+
+
+
+
+
+
+<!-- Morris.js charts -->
+	<script src="<%=request.getContextPath()%>/resources/bower_components/raphael/raphael.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/bower_components/morris.js/morris.min.js"></script>
+	<!-- Sparkline -->
+	<script
+		src="<%=request.getContextPath()%>/resources/dist/jquery.sparkline.min.js"></script>
+	<!-- jvectormap -->
+	<script src="<%=request.getContextPath()%>/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+	<!-- jQuery Knob Chart -->
+	<script src="<%=request.getContextPath()%>/resources/dist/jquery.knob.min.js"></script>
+	<!-- daterangepicker -->
+	<script src="<%=request.getContextPath()%>/resources/bower_components/moment/min/moment.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<!-- datepicker -->
+	<script
+		src="<%=request.getContextPath()%>/resources/dist/js/bootstrap-datepicker.min.js"></script>
+	<!-- Bootstrap WYSIHTML5 -->
+	<script
+		src="<%=request.getContextPath()%>/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+	<!-- Slimscroll -->
+
+	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+	<script src="<%=request.getContextPath()%>/resources/dist/js/pages/dashboard.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

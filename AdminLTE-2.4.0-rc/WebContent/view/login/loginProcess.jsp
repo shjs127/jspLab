@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="util.Cookies"%>
 
 <%
 	request.setCharacterEncoding("utf-8");
@@ -8,7 +9,10 @@
 	String password = request.getParameter("password");
 	
 	if (email.equals("hanguk@naver.com") && password.equals("1234")) {
-		response.sendRedirect("../main/index.jsp?email="+email);
+		//request.getSession().setAttribute("email", email);
+		//response.addCookie(Cookies.createCookie("AUTH", email, "/", -1));
+		session.setAttribute("MEMBERID", email);
+		response.sendRedirect("../main/index.jsp?locale=ko");
 	} else {
 %>
 <script>

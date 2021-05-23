@@ -4,19 +4,7 @@
 <%@ include file="../include/header.jspf" %>
 
 
-
-<link rel="stylesheet" type="text/css" href="css/base.css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
-<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="js/style.css" />
-<script type="text/javascript" src="js/swipe.js"></script>
-<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
-<script type="text/javascript" src="js/jquery.cookie.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-
+<fmt:bundle basename="resource.message">
 
 
 		<!-- Content Wrapper. Contains page content -->
@@ -24,7 +12,7 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
-					Dashboard <small>Control panel</small>
+					<fmt:message key="DASHBOARD" /> <small>Control panel</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -34,54 +22,6 @@
 
 			<!-- Main content -->
 			<section class="content">
-
-
-
-
-
-
-				<div id="visual">
-					<div id="mySwipe" class='swipe'>
-						<ul class="touch_banner swipe-wrap">
-							<!--Â ë°°ë ëª©ë¡Â -->
-							<li><a href="#"><img src="images/visual_img_1.jpg" 
-									alt="" /></a></li>
-							<li><a href="#"><img src="images/visual_img_2.jpg" 
-									alt="" /></a></li>
-							<li><a href="#"><img src="images/visual_img_3.jpg" 
-									alt="" /></a></li>
-						</ul>
-					</div>
-					<ul class="touch_bullet">
-						<!--Â ë°°ë ìì¹ íìÂ -->
-						<li><img src="images/visual_bullet_on.png" class="active"
-							alt="" /></li>
-						<li><img src="images/visual_bullet_off.png" alt="" /></li>
-						<li><img src="images/visual_bullet_off.png" alt="" /></li>
-					</ul>
-					<p class="touch_left_btn">
-						<!--Â ì´ì  ë²í¼Â -->
-						<a href="#"> <img src="images/visual_btn_left.png" alt="ì´ì  ë°°ë" />
-						</a>
-					</p>
-					<p class="touch_right_btn">
-						<!--Â ë¤ì ë²í¼Â -->
-						<a href="#"> <img src="images/visual_btn_right.png"
-							alt="ë¤ì ë°°ë" />
-						</a>
-					</p>
-				</div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 				<!-- Small boxes (Stat box) -->
@@ -605,4 +545,7 @@
 		
 
 
-<%@ include file="../include/footernojq.jspf" %>
+<%@ include file="../include/footer.jspf" %>
+
+
+</fmt:bundle>
