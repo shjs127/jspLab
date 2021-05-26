@@ -414,6 +414,8 @@
 						</span>
 					</a>
 						<ul class="treeview-menu">
+							<li><a href="../guestbook/list.jsp"><i
+									class="fa fa-circle-o"></i> 방명록</a></li>
 							<li><a href="../examples/boardGeneral.jsp"><i
 									class="fa fa-circle-o"></i> 일반 게시판</a></li>
 							<li><a href="../examples/boardDonga.jsp"><i

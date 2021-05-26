@@ -1,12 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
              http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
+	version="3.1">
 
 	<session-config>
-		<session-timeout>1</session-timeout>
+		<session-timeout>60</session-timeout>
 	</session-config>
+
+
+	<!-- 국제화 관련 태그 기본 값 설정 -->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>resource.message</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.locale</param-name>
+		<param-value>en</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.timeZone</param-name>
+		<param-value>Asia/Seoul</param-value>
+	</context-param>
+
+
+	<servlet>
+		<servlet-name>mysqlDriverLoader</servlet-name>
+		<servlet-class>jdbc.MySQLDriverLoader</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>DBCPInit</servlet-name>
+		<servlet-class>jdbc.DBCPInit</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>DBCPInitGuestbook</servlet-name>
+		<servlet-class>jdbc.DBCPInitGuestbook</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+
 </web-app>
