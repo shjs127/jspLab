@@ -46,7 +46,7 @@
 		<div class="register-box-body">
 			<p class="login-box-msg">회원 등록</p>
 
-			<form action="registerProcess.jsp" method="post">
+			<form action="join.do" method="post">
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" name="name" placeholder="Full name">
 					<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -60,7 +60,7 @@
 					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="password" class="form-control" name="passwordRe"
+					<input type="password" class="form-control" name="confirmPassword"
 						placeholder="Retype password"> <span
 						class="glyphicon glyphicon-log-in form-control-feedback"></span>
 				</div>
@@ -88,7 +88,7 @@
 					class="fa fa-google-plus"></i> Sign up using Google+</a>
 			</div>
 
-			<a href="login.jsp" class="text-center">I already have a
+			<a href="login.do" class="text-center">I already have a
 				membership</a>
 		</div>
 		<!-- /.form-box -->

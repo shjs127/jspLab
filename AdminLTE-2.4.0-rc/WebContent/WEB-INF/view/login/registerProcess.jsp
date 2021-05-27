@@ -33,8 +33,11 @@
 		if (conn != null) try { conn.close(); } catch(SQLException ex) {}
 	}
 %>
-
+<!-- 
 <script>
 	alert("성공적으로 처리 되었습니다.");
 	history.go(-2);
-</script>
+</script> -->
+<% 
+		response.sendRedirect("login.do");
+%>

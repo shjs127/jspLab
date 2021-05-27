@@ -44,7 +44,7 @@
 		<div class="login-box-body">
 			<p class="login-box-msg">Sign in to start your session</p>
 
-			<form action="<%= request.getContextPath() %>/view/login/loginProcess.jsp" method="post">
+			<form action="login.do" method="post">
 				<div class="form-group has-feedback">
 					<input type="email" class="form-control" name="email" id="email"
 						placeholder="Email"> <span
@@ -80,7 +80,7 @@
 			</div>
 			<!-- /.social-auth-links -->
 
-			<a href="#">비번 찾기</a><br> <a href="register.jsp"
+			<a href="#">비번 찾기</a><br> <a href="join.do"
 				class="text-center">회원 가입</a>
 
 		</div>
