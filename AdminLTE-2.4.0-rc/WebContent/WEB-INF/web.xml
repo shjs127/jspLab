@@ -45,4 +45,17 @@
 	</servlet>
 
 
+	<!-- 로그인 필터 -->
+	<filter>
+		<filter-name>LoginCheck</filter-name>
+		<filter-class>filter.LoginCheckFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>LoginCheck</filter-name>
+		<url-pattern>/view/guestbook/*</url-pattern>
+		<url-pattern>/view/main/*</url-pattern>
+	</filter-mapping>
+
+
 </web-app>

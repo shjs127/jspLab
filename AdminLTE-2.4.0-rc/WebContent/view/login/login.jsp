@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,9 +42,9 @@
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
-			<p class="login-box-msg">로그인</p>
+			<p class="login-box-msg">Sign in to start your session</p>
 
-			<form action="loginProcess.jsp" method="post">
+			<form action="<%= request.getContextPath() %>/view/login/loginProcess.jsp" method="post">
 				<div class="form-group has-feedback">
 					<input type="email" class="form-control" name="email" id="email"
 						placeholder="Email"> <span
@@ -79,8 +80,8 @@
 			</div>
 			<!-- /.social-auth-links -->
 
-			<a href="#">I forgot my password</a><br> <a href="register.jsp"
-				class="text-center">Register a new membership</a>
+			<a href="#">비번 찾기</a><br> <a href="register.jsp"
+				class="text-center">회원 가입</a>
 
 		</div>
 		<!-- /.login-box-body -->

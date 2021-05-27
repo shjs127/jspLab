@@ -13,7 +13,8 @@
 		response.sendRedirect("../login/login.jsp");
 	}
 %> --%>
-	<%
+
+<%-- 	<%
 		String memberId = (String) session.getAttribute("MEMBERID");
 	boolean login = memberId == null ? false : true;
 
@@ -21,7 +22,7 @@
 		response.sendRedirect("../login/login.jsp");
 	}
 	%>
-
+ --%>
 
 
 
@@ -223,7 +224,7 @@
 							class="dropdown-toggle" data-toggle="dropdown"> <img
 								src="<%=request.getContextPath()%>/resources/dist/img/user2-160x160.jpg"
 								class="user-image" alt="User Image"> <span
-								class="hidden-xs"> <%-- <%=cookies.getValue("AUTH")%> --%><%=memberId%></span>
+								class="hidden-xs"> <%-- <%=cookies.getValue("AUTH")%> --%><%-- <%=memberId%> --%>${MEMBERID}</span>
 						</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
@@ -438,7 +439,7 @@
 									404 Error</a></li>
 							<li><a href="500.html"><i class="fa fa-circle-o"></i>
 									500 Error</a></li>
-							<li class="active"><a href="blank.html"><i
+							<li class="active"><a href="<%=request.getContextPath()%>/view/examples/blank.jsp"><i
 									class="fa fa-circle-o"></i> Blank Page</a></li>
 							<li><a href="pace.html"><i class="fa fa-circle-o"></i>
 									Pace Page</a></li>
