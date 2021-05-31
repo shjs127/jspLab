@@ -7,13 +7,13 @@ public class Member {
 	private String id;
 	private String name;
 	private String password;
-	private String email;
+	private Date regDate;
 
-	public Member(String id, String name, String password, String email) {
+	public Member(String id, String name, String password, Date regDate) {
 		this.id = id;
 		this.name = name;
 		this.password = password;
-		this.email = email;
+		this.regDate = regDate;
 	}
 
 	public String getId() {
@@ -28,8 +28,8 @@ public class Member {
 		return password;
 	}
 	
-	public String getEmail() {
-		return email;
+	public Date getRegDate() {
+		return regDate;
 	}
 	
 	public boolean matchPassword(String pwd) {

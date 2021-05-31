@@ -46,32 +46,15 @@
 
 
 	<!-- 로그인 필터 -->
-	<filter>
-		<filter-name>LoginCheck</filter-name>
-		<filter-class>filter.LoginCheckFilter</filter-class>
-	</filter>
+	<!-- <filter> <filter-name>LoginCheck</filter-name> <filter-class>filter.LoginCheckFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>LoginCheck</filter-name> <url-pattern>/view/guestbook/*</url-pattern> 
+		<url-pattern>/view/main/*</url-pattern> </filter-mapping> -->
 
-	<filter-mapping>
-		<filter-name>LoginCheck</filter-name>
-		<url-pattern>/view/guestbook/*</url-pattern>
-		<url-pattern>/view/main/*</url-pattern>
-	</filter-mapping>
 
-	<filter>
-		<filter-name>LoginCheckFilter</filter-name>
-		<filter-class>filter.LoginCheckFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>LoginCheckFilter</filter-name>
-		<url-pattern>/changePwd.do</url-pattern>
-		<url-pattern>/article/write.do</url-pattern>
-		<url-pattern>/article/modify.do</url-pattern>
-	</filter-mapping>
-	
 	<listener>
 		<listener-class>jdbc.DBCPInitListener</listener-class>
 	</listener>
-	
+
 	<context-param>
 		<param-name>poolConfig</param-name>
 		<param-value>
@@ -94,12 +77,12 @@
 			<param-value>utf-8</param-value>
 		</init-param>
 	</filter>
-	
+
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
+
 	<servlet>
 		<servlet-name>ControllerUsingURI</servlet-name>
 		<servlet-class>mvc.controller.ControllerUsingURI</servlet-class>
@@ -111,9 +94,32 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>ControllerUsingURI</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+
+	<!-- 로그인 필터 -->
+	<filter>
+		<filter-name>LoginCheckFilter</filter-name>
+		<filter-class>filter.LoginCheckFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginCheckFilter</filter-name>
+<!-- 		<url-pattern>/changePwd.do</url-pattern>
+		<url-pattern>/article/write.do</url-pattern>
+		<url-pattern>/article/modify.do</url-pattern> -->
+		<url-pattern>/main/*</url-pattern>
+		<url-pattern>/board/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<!-- 초기 화면 -->
+	<welcome-file-list>
+		<welcome-file>/WEB-INF/view/login/login.jsp</welcome-file>
+	</welcome-file-list>
+
+
 </web-app>
+

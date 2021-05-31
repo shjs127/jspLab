@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import jdbc.JdbcUtil;
-import jdbc.connection.ConnectionProvider;
+import jdbc.connection.ConnectionProviderMVC;
 import member.dao.MemberDao;
 import member.model.Member;
 
@@ -15,7 +15,7 @@ public class ChangePasswordService {
 	public void changePassword(String userId, String curPwd, String newPwd) {
 		Connection conn = null;
 		try {
-			conn = ConnectionProvider.getConnection();
+			conn = ConnectionProviderMVC.getConnection();
 			conn.setAutoCommit(false);
 			
 			Member member = memberDao.selectById(conn, userId);

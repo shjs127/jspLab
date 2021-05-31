@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ include file="WEB-INF/view/include/header.jspf" %>
+<%@ include file="../include/header.jspf" %>
 
 
 <fmt:bundle basename="resource.message">
@@ -545,7 +545,7 @@
 		
 
 
-<%@ include file="WEB-INF/view/include/footer.jspf" %>
+<%@ include file="../include/footer.jspf" %>
 
 
 </fmt:bundle>

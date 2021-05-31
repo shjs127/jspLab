@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,17 +14,19 @@
 	name="viewport">
 <!-- Bootstrap 3.3.7 -->
 <link rel="stylesheet"
-	href="<%= request.getContextPath() %>/resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	href="<%=request.getContextPath()%>/resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
 <!-- Font Awesome -->
 <link rel="stylesheet"
-	href="<%= request.getContextPath() %>/resources/bower_components/font-awesome/css/font-awesome.min.css">
+	href="<%=request.getContextPath()%>/resources/bower_components/font-awesome/css/font-awesome.min.css">
 <!-- Ionicons -->
 <link rel="stylesheet"
-	href="<%= request.getContextPath() %>/resources/bower_components/Ionicons/css/ionicons.min.css">
+	href="<%=request.getContextPath()%>/resources/bower_components/Ionicons/css/ionicons.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="<%= request.getContextPath() %>/resources/dist/css/AdminLTE.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/dist/css/AdminLTE.min.css">
 <!-- iCheck -->
-<link rel="stylesheet" href="<%= request.getContextPath() %>/resources/plugins/iCheck/square/blue.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/plugins/iCheck/square/blue.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,17 +46,24 @@
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
-			<p class="login-box-msg">Sign in to start your session</p>
+			<p class="login-box-msg">
+				<c:if test="${errors.idOrPwNotMatch}">
+					아이디와 암호가 일치하지 않습니다.
+				</c:if>
+				<c:if test="${errors.id}">ID를 입력하세요.</c:if>
+				<c:if test="${errors.password}">암호를 입력하세요.</c:if>
+			</p>
 
-			<form action="login.do" method="post">
+			<form action="${pageContext.request.contextPath}/login.do"
+				method="post">
 				<div class="form-group has-feedback">
 					<input type="email" class="form-control" name="email" id="email"
 						placeholder="Email"> <span
 						class="glyphicon glyphicon-envelope form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="password" class="form-control" name="password" id="password"
-						placeholder="Password"> <span
+					<input type="password" class="form-control" name="password"
+						id="password" placeholder="Password"> <span
 						class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div class="row">
@@ -64,8 +75,8 @@
 					</div>
 					<!-- /.col -->
 					<div class="col-xs-4">
-						<button type="submit" class="btn btn-primary btn-block btn-flat" id="btn1">Sign
-							In</button>
+						<button type="submit" class="btn btn-primary btn-block btn-flat"
+							id="btn1">Sign In</button>
 					</div>
 					<!-- /.col -->
 				</div>
@@ -80,8 +91,8 @@
 			</div>
 			<!-- /.social-auth-links -->
 
-			<a href="#">비번 찾기</a><br> <a href="join.do"
-				class="text-center">회원 가입</a>
+			<a href="#">비번 찾기</a><br> <a href="join.do" class="text-center">회원
+				가입</a>
 
 		</div>
 		<!-- /.login-box-body -->
@@ -89,11 +100,14 @@
 	<!-- /.login-box -->
 
 	<!-- jQuery 3 -->
-	<script src="<%= request.getContextPath() %>/resources/bower_components/jquery/dist/jquery.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bower_components/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap 3.3.7 -->
-	<script src="<%= request.getContextPath() %>/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<!-- iCheck -->
-	<script src="<%= request.getContextPath() %>/resources/plugins/iCheck/icheck.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/plugins/iCheck/icheck.min.js"></script>
 	<script>
 		$(function() {
 			$('input').iCheck({
@@ -106,7 +120,7 @@
 
 
 
-<!-- 	<script type="text/javascript">
+	<!-- 	<script type="text/javascript">
 		//<![CDATA[
 		function login(id, pw) {
 			if (id == "hanguk@naver.com") {
@@ -133,8 +147,8 @@
 
 		//]]>
 	</script> -->
-	
-	
+
+
 
 
 </body>

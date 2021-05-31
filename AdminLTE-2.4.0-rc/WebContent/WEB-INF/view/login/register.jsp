@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,20 +46,31 @@
 		</div>
 
 		<div class="register-box-body">
-			<p class="login-box-msg">회원 등록</p>
+			<p class="login-box-msg">
+				<c:if test="${errors.id}">ID를 입력하세요.</c:if>
+				<c:if test="${errors.duplicateId}">이미 사용중인 아이디입니다.</c:if>
+				<c:if test="${errors.name}">이름을 입력하세요.</c:if>
+				<c:if test="${errors.password}">암호를 입력하세요.</c:if>
+				<c:if test="${errors.confirmPassword}">확인을 입력하세요.</c:if>
+				<c:if test="${errors.notMatch}">암호와 확인이 일치하지 않습니다.</c:if>
+			</p>
 
+			<!-- <form action="registerProcess.jsp" method="post"> -->
 			<form action="join.do" method="post">
 				<div class="form-group has-feedback">
-					<input type="text" class="form-control" name="name" placeholder="Full name">
-					<span class="glyphicon glyphicon-user form-control-feedback"></span>
+					<input type="text" class="form-control" name="name"
+						placeholder="Full name"> <span
+						class="glyphicon glyphicon-user form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="email" class="form-control" name="email" placeholder="Email">
-					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+					<input type="email" class="form-control" name="email"
+						placeholder="Email"> <span
+						class="glyphicon glyphicon-envelope form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="password" class="form-control" name="password" placeholder="Password">
-					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					<input type="password" class="form-control" name="password"
+						placeholder="Password"> <span
+						class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
 					<input type="password" class="form-control" name="confirmPassword"
@@ -88,8 +101,7 @@
 					class="fa fa-google-plus"></i> Sign up using Google+</a>
 			</div>
 
-			<a href="login.do" class="text-center">I already have a
-				membership</a>
+			<a href="login.do" class="text-center">가입 취소</a>
 		</div>
 		<!-- /.form-box -->
 	</div>

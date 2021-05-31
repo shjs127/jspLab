@@ -224,7 +224,7 @@
 							class="dropdown-toggle" data-toggle="dropdown"> <img
 								src="<%=request.getContextPath()%>/resources/dist/img/user2-160x160.jpg"
 								class="user-image" alt="User Image"> <span
-								class="hidden-xs"> <%-- <%=cookies.getValue("AUTH")%> --%><%-- <%=memberId%> --%>${MEMBERID}</span>
+								class="hidden-xs"> <%-- <%=cookies.getValue("AUTH")%> --%><%-- <%=memberId%> --%><%-- ${MEMBERID} --%>${authUser.name}</span>
 						</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
@@ -233,7 +233,7 @@
 									class="img-circle" alt="User Image">
 
 									<p>
-										Alexander Pierce - Web Developer <small>Member since
+										${authUser.name }<small>Member since
 											Nov. 2012</small>
 									</p></li>
 								<!-- Menu Body -->
@@ -253,11 +253,10 @@
 								<!-- Menu Footer-->
 								<li class="user-footer">
 									<div class="pull-left">
-										<a href="#" class="btn btn-default btn-flat">Profile</a>
+										<a href="profile.do" class="btn btn-default btn-flat">Profile</a>
 									</div>
 									<div class="pull-right">
-										<a href="login.do" class="btn btn-default btn-flat">Sign
-											out</a>
+										<a href="${pageContext.request.contextPath}/logout.do" class="btn btn-default btn-flat">Sign out</a>
 									</div>
 								</li>
 							</ul></li>
@@ -415,7 +414,7 @@
 						</span>
 					</a>
 						<ul class="treeview-menu">
-							<li><a href="../guestbook/list.jsp"><i
+							<li><a href="list.do"><i
 									class="fa fa-circle-o"></i> 방명록</a></li>
 							<li><a href="../examples/boardGeneral.jsp"><i
 									class="fa fa-circle-o"></i> 일반 게시판</a></li>
@@ -427,7 +426,7 @@
 									class="fa fa-circle-o"></i> 갤러리</a></li>
 							<li><a href="invoice.html"><i class="fa fa-circle-o"></i>
 									Invoice</a></li>
-							<li><a href="profile.html"><i class="fa fa-circle-o"></i>
+							<li><a href="profile.do"><i class="fa fa-circle-o"></i>
 									Profile</a></li>
 							<li><a href="login.html"><i class="fa fa-circle-o"></i>
 									Login</a></li>

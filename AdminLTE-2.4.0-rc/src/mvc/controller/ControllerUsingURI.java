@@ -21,11 +21,15 @@ public class ControllerUsingURI extends HttpServlet {
     // <커맨드, 핸들러인스턴스> 매핑 정보 저장
     private Map<String, CommandHandler> commandHandlerMap = 
     		new HashMap<>();
+    // {"/join.do":member.command.JoinHandler 객체, 
+    //  "/login.do":auth.command.LoginHandler 객체, ....}
 
     public void init() throws ServletException {
         String configFile = getInitParameter("configFile");
+        //  "/WEB-INF/commandHandlerURI.properties"
         Properties prop = new Properties();
         String configFilePath = getServletContext().getRealPath(configFile);
+        // "D:\dev\workspace\jsp\chap21Lab\WebContent\WEB-INF\commandHandlerURI.properties"
         try (FileReader fis = new FileReader(configFilePath)) {
             prop.load(fis);
         } catch (IOException e) {
@@ -60,16 +64,20 @@ public class ControllerUsingURI extends HttpServlet {
     private void process(HttpServletRequest request,
     HttpServletResponse response) throws ServletException, IOException {
 		String command = request.getRequestURI();
+		// "/chap21/join.do"
 		if (command.indexOf(request.getContextPath()) == 0) {
 			command = command.substring(request.getContextPath().length());
+			// "/join.do"
 		}
         CommandHandler handler = commandHandlerMap.get(command);
+        // member.command.JoinHandler 객체
         if (handler == null) {
             handler = new NullHandler();
         }
         String viewPage = null;
         try {
             viewPage = handler.process(request, response);
+            // "/WEB-INF/view/joinForm.jsp"
         } catch (Throwable e) {
             throw new ServletException(e);
         }

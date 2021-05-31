@@ -23,11 +23,10 @@ public class MemberDao {
 			Member member = null;
 			if (rs.next()) {
 				member = new Member(
-						rs.getString("email"), 
+						rs.getString("memberid"), 
 						rs.getString("name"), 
 						rs.getString("password"),
-						rs.getString("email")
-						/*toDate(rs.getTimestamp("regdate"))*/);
+						toDate(rs.getTimestamp("regdate")));
 			}
 			return member;
 		} finally {
@@ -36,17 +35,17 @@ public class MemberDao {
 		}
 	}
 
-	/*
-	 * private Date toDate(Timestamp date) { return date == null ? null : new
-	 * Date(date.getTime()); }
-	 */
+	private Date toDate(Timestamp date) {
+		return date == null ? null : new Date(date.getTime());
+	}
+
 	public void insert(Connection conn, Member mem) throws SQLException {
 		try (PreparedStatement pstmt = 
 				conn.prepareStatement("insert into member values(?,?,?,?)")) {
 			pstmt.setString(1, mem.getId());
 			pstmt.setString(2, mem.getName());
 			pstmt.setString(3, mem.getPassword());
-			pstmt.setString(4,mem.getEmail());
+			pstmt.setTimestamp(4, new Timestamp(mem.getRegDate().getTime()));
 			pstmt.executeUpdate();
 		}
 	}

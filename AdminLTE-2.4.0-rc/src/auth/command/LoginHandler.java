@@ -35,7 +35,7 @@ public class LoginHandler implements CommandHandler {
 
 	private String processSubmit(HttpServletRequest req, HttpServletResponse res) 
 	throws Exception {
-		String id = trim(req.getParameter("id"));
+		String id = trim(req.getParameter("email"));
 		String password = trim(req.getParameter("password"));
 
 		Map<String, Boolean> errors = new HashMap<>();
@@ -53,7 +53,8 @@ public class LoginHandler implements CommandHandler {
 		try {
 			User user = loginService.login(id, password);
 			req.getSession().setAttribute("authUser", user);
-			res.sendRedirect(req.getContextPath() + "/index.jsp");
+			//res.sendRedirect(req.getContextPath() + "/view/test/index.jsp");
+			res.sendRedirect(req.getContextPath() + "/main/index.do");
 			return null;
 		} catch (LoginFailException e) {
 			errors.put("idOrPwNotMatch", Boolean.TRUE);
